@@ -31,5 +31,5 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        source: "./build/libs/FollowMe-Server-0.0.1-SNAPSHOT.jar"
+        source: "build/libs/FollowMe-Server-0.0.1-SNAPSHOT.jar"
         target: /home/springi/test/ 
