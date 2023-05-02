@@ -20,6 +20,11 @@ jobs:
     # Runs a single command using the runners shell
     - name: build jar
       run: ./gradlew bootJar
+    - name: setup java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'      
     - name: copy jar to server
       uses: appleboy/scp-action@v0.1.4
       with:
