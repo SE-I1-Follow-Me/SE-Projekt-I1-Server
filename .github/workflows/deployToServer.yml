@@ -18,5 +18,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     # Runs a single command using the runners shell
-    - name: pull repo
-      run: ls -R
+    - name: build jar
+      run: ./gradlew bootJar
+    - name: copy jar to server
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        source: ".\\FollowMe-Server-0.0.1-SNAPSHOT.jar"
+        target: /home/springi/test/ 
