@@ -26,7 +26,7 @@ public class Roboter {
     }
 
     public String getAdresse() {
-        return "Hallo";
+        return adresse;
     }
 
     public void setAdresse(String adresse) {
