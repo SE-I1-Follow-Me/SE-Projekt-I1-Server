@@ -34,6 +34,7 @@ jobs:
     - name: copy jar to server
       uses: appleboy/scp-action@v0.1.4
       with:
+        run: cd build/libs/
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
