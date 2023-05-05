@@ -28,7 +28,7 @@ jobs:
     - name: ls1
       run: ls
     - name: go to dir
-      run: cd build/libs/
+      run: cd /build/libs/
     - name: ls2
       run: ls
     - name: copy jar to server
@@ -37,5 +37,5 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        source: "./FollowMe-Server-0.0.1-SNAPSHOT.jar"
+        source: "FollowMe-Server-0.0.1-SNAPSHOT.jar"
         target: /home/springi/test/ 
