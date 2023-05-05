@@ -26,11 +26,11 @@ jobs:
     - name: build jar
       run: ./gradlew bootJar
     - name: ls1
-      run: ls
+      run: pwd
     - name: go to dir
-      run: cd /build/libs/
+      run: cd build/libs/
     - name: ls2
-      run: ls
+      run: pwd
     - name: copy jar to server
       uses: appleboy/scp-action@v0.1.4
       with:
