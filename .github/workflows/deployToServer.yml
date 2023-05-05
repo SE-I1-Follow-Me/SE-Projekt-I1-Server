@@ -37,16 +37,15 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         source: "FollowMe-Server-0.0.1-SNAPSHOT.jar"
         target: /home/springi/test/ 
-    - name: setup via ssh
+    - name: executing remote ssh commands
       uses: appleboy/ssh-action@master
-      env:
-        USERNAME: secrets.USERNAME
-        HOST: secrets.HOST
-        SCRIPT: |
+      with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
             echo "test"
             cd /home/springi/test/
             sudo chmod -v 777 FollowMe-Server-0.0.1-SNAPSHOT.jar
             service followmescript restart
-            
-        KEY: ${{ secrets.PASSWORD }}        
-
