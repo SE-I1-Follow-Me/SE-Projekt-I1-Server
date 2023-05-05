@@ -28,7 +28,7 @@ jobs:
     - name: ls1
       run: ls
     - name: ls2
-      run: mv build/libs/ ./
+      run: mv build/libs/FollowMe-Server-0.0.1-SNAPSHOT.jar ./
     - name: copy jar to server
       uses: appleboy/scp-action@v0.1.4
       with:
