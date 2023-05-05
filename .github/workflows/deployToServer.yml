@@ -25,13 +25,17 @@ jobs:
     # Runs a single command using the runners shell
     - name: build jar
       run: ./gradlew bootJar
+    - name: ls1
+      run: ls
     - name: go to dir
       run: cd build/libs/
+    - name: ls2
+      run: ls
     - name: copy jar to server
       uses: appleboy/scp-action@v0.1.4
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        source: "FollowMe-Server-0.0.1-SNAPSHOT.jar"
+        source: "./FollowMe-Server-0.0.1-SNAPSHOT.jar"
         target: /home/springi/test/ 
