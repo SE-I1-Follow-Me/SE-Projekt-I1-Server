@@ -37,7 +37,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         source: "FollowMe-Server-0.0.1-SNAPSHOT.jar"
-        target: /home/springi/test/ 
+        target: /home/springi/ 
     
     - name: SSH Deploy
       uses: appleboy/ssh-action@v0.1.10
