@@ -17,6 +17,27 @@ public class Roboter {
 
     public String name;
 
+    public boolean isFollowing() {
+        return isFollowing;
+    }
+
+    public void setFollowing(boolean following) {
+        isFollowing = following;
+    }
+
+    public boolean isFollowing = false;
+
+    public boolean isOnline() {
+        return isOnline;
+    }
+
+    public void setOnline(boolean online) {
+        isOnline = online;
+    }
+
+    public boolean isOnline = false;
+
+
     public Integer getId() {
         return id;
     }

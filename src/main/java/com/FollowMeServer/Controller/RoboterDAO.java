@@ -16,4 +16,7 @@ public class RoboterDAO {
     public List<Roboter> getAllRoboter(){
         return roboterRepository.findAll();
     }
+
+    public void saveRoboter(Roboter r) {roboterRepository.save(r);}
+
 }

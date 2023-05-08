@@ -24,4 +24,6 @@ public class RoboterController {
     public List<Roboter> getRobotList(){
         return roboterDAO.getAllRoboter();
     }
+    @GetMapping("/roboter/save")
+    public void saveRoboter(Roboter ro){roboterDAO.saveRoboter(ro);}
 }
