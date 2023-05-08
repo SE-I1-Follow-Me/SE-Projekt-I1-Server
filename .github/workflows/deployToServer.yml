@@ -38,7 +38,13 @@ jobs:
         source: "FollowMe-Server-0.0.1-SNAPSHOT.jar"
         target: /home/springi/test/ 
     - name: SSH Deploy
-      run: |
-        sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME}}@${{ secrets.HOST }} 'cd /home/springi/test/ && sudo chmod -v 777 FollowMe-Server-0.0.1-SNAPSHOT.jar && service followmescript restart'
-      env:
-        SSHPASS: ${{ secrets.PASSWORD }}
+    - name: Run sshpass commands
+      uses: matheusvanzan/sshpass-action@v2
+      with:
+        host: ${{ secrets.HOST }}
+        user: ${{ secrets.USERNAME }}
+        pass: ${{ secrets.PASSWORD }}
+        run: |
+          - ls
+    
+    
