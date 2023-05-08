@@ -45,6 +45,6 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        script: cd /home/springi/ && echo '${{ secrets.PASSWORD }}' | sudo -S chmod -v 777 FollowMe-Server-0.0.1-SNAPSHOT.jar && echo '${{ secrets.PASSWORD }}' | sudo -S ./followme-stop.sh && java -jar FollowMe-Server-0.0.1-SNAPSHOT.jar
+        script: cd /home/springi/ && echo '${{ secrets.PASSWORD }}' | sudo -S chmod -v 777 FollowMe-Server-0.0.1-SNAPSHOT.jar && echo '${{ secrets.PASSWORD }}' | sudo -S service followmescript restart
    
     
