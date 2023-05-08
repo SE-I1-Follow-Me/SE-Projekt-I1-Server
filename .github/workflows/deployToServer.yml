@@ -38,7 +38,6 @@ jobs:
         source: "FollowMe-Server-0.0.1-SNAPSHOT.jar"
         target: /home/springi/test/ 
     - name: SSH Deploy
-    - name: Run sshpass commands
       uses: matheusvanzan/sshpass-action@v2
       with:
         host: ${{ secrets.HOST }}
