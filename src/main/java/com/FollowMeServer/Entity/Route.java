@@ -1,27 +1,25 @@
 package com.FollowMeServer.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
 public class Route {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
-
-    @Id
     public Integer drivenBy;
 
-    public String longitude;
+    public String name;
 
-    public String latitude;
+    @ElementCollection
+    public List<Coordinates> coordinates = new ArrayList<Coordinates>();
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
 
     public void setId(Integer id) {
         this.id = id;
@@ -35,19 +33,19 @@ public class Route {
         this.drivenBy = drivenBy;
     }
 
-    public String getLongitude() {
-        return longitude;
+    public String getName() {
+        return name;
     }
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLatitude() {
-        return latitude;
+    public List<Coordinates> getCoordinates() {
+        return coordinates;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
+    public void setCoordinates(List<Coordinates> coordinates) {
+        this.coordinates = coordinates;
     }
 }

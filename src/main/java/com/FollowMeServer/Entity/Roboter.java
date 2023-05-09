@@ -31,8 +31,8 @@ public class Roboter {
         return isOnline;
     }
 
-    public void setOnline(boolean online) {
-        isOnline = online;
+    public void setOnline(boolean isOnline) {
+        this.isOnline = isOnline;
     }
 
     public boolean isOnline = false;
