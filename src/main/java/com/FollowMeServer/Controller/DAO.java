@@ -28,5 +28,10 @@ public class DAO {
     public List<Route> getAllRoute() { return  routeRepository.findAll(); }
 
     public  void saveRoute(Route r) {routeRepository.save(r); }
+    
+    public Roboter findRoboterById(Integer id) {
+        Optional<Roboter> optionalRoboter = roboterRepository.findById(id);
+        return optionalRoboter.orElse(null);
+    }
 
 }
