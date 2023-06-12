@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -30,6 +33,15 @@ public class Controller {
 
     @PostMapping("/roboter/save")
     public void saveRoboter(@RequestBody Roboter ro){dAO.saveRoboter(ro); }
+    
+
+    @PatchMapping("/roboter/update/{id}")
+    public void updateIsFollowing(@PathVariable("id") Integer id, @RequestParam("isFollowing") boolean isFollowing) {
+        Roboter robot = dAO.findRoboterById(id);
+        if (robot != null) {
+            robot.setFollowing(isFollowing);
+            dAO.saveRoboter(robot);
+        }    
 
     @GetMapping("/route/getAll")
     public List<Route> getRouteList(){
