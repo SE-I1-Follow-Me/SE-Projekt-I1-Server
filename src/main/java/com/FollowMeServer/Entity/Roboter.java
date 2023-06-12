@@ -17,26 +17,9 @@ public class Roboter {
 
     public String name;
 
-    public boolean isFollowing() {
-        return isFollowing;
-    }
-
-    public void setFollowing(boolean following) {
-        isFollowing = following;
-    }
-
     public boolean isFollowing = false;
 
-    public boolean isOnline() {
-        return isOnline;
-    }
-
-    public void setOnline(boolean isOnline) {
-        this.isOnline = isOnline;
-    }
-
     public boolean isOnline = false;
-
 
     public Integer getId() {
         return id;
@@ -60,6 +43,22 @@ public class Roboter {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isFollowing() {
+        return isFollowing;
+    }
+
+    public void setFollowing(boolean following) {
+        isFollowing = following;
+    }
+
+    public boolean isOnline() {
+        return isOnline;
+    }
+
+    public void setOnline(boolean isOnline) {
+        this.isOnline = isOnline;
     }
 
 }
