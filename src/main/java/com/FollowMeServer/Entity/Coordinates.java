@@ -1,12 +1,31 @@
 package com.FollowMeServer.Entity;
 
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 
+
+/**
+ * Klasse um die Liste der Koordinaten bereitzustellen, wird in der Klasse Route verwendet
+ */
 @Embeddable
 public class Coordinates {
-    private String longitude;
 
-    private String latitude;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int id;
+    public String longitude;
+
+    public String latitude;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getLongitude() {
         return longitude;

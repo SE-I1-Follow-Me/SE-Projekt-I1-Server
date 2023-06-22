@@ -6,6 +6,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 
+/**
+ * Klasse die das Entity Roboter beschreibt
+ */
 @Entity
 public class Roboter {
 

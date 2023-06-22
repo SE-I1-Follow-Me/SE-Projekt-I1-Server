@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+/**
+ * Klasse die das Entity Route beschreibt
+ */
 @Entity
 public class Route {
 

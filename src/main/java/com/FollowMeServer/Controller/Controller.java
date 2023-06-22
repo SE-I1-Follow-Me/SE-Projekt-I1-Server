@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-import java.util.Optional;
 
+
+/**
+ * Klasse um die verschiedenen GET, POST und PACh Methoden bereit zu stellen
+ */
 @RestController
 public class Controller {
 
@@ -27,15 +30,28 @@ public class Controller {
         roboterRepository.delete(roboter);
     }
     */
+
+    /**
+     * GET Methode fuer die Roboter Objekte
+     * @return eine Liste von den aktuellen Robotern
+     */
     @GetMapping("/roboter/getAll")
     public List<Roboter> getRobotList(){
         return dAO.getAllRoboter();
     }
 
+    /**
+     * POST Methode, um ein Roboter Objekt abzuspeichern
+     * @param ro zu speicherndes Roboter Objekt
+     */
     @PostMapping("/roboter/save")
     public void saveRoboter(@RequestBody Roboter ro){dAO.saveRoboter(ro); }
 
-
+    /**
+     * PATCH Methode um den isFollowing Status zu aktualisieren
+     * @param id ID, des zu aktualisierenden Roboters
+     * @param isFollowing zu aktualisierender isFollowing Wert
+     */
     @PatchMapping("/roboter/update/{id}")
     public void updateIsFollowing(@PathVariable("id") Integer id, @RequestParam("isFollowing") boolean isFollowing) {
         Roboter robot = dAO.findRoboterById(id);
@@ -45,11 +61,19 @@ public class Controller {
         }
     }
 
+    /**
+     * GET Methode fuer die Routen
+     * @return Liste der aktuellen Routen
+     */
     @GetMapping("/route/getAll")
-    public List<Route> getRouteList(){
+      public List<Route> getRouteList(){
         return dAO.getAllRoute();
     }
 
+    /**
+     * POST Methode fuer eine zu speichernde Route
+     * @param rou das zu speichernde Routen Objekt
+     */
     @PostMapping("/route/save")
     public void saveRoute(@RequestBody Route rou){dAO.saveRoute(rou); }
 }

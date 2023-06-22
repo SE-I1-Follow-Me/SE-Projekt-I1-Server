@@ -7,10 +7,12 @@ import com.FollowMeServer.Repository.RouteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Klasse um die Funktionalität der verschiedenen GET, POST und PATCH Methoden
+ */
 @Service
 public class DAO {
 
