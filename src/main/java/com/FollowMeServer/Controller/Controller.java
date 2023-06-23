@@ -68,7 +68,7 @@ public class Controller {
      * @param id die ID des zu löschenden Roboters
      */
     @DeleteMapping("/roboter/delete/{id}")
-    public void deleteRoboter(@PathVariable Integer id) {
+    public void deleteRoboter(@PathVariable ("id") Integer id) {
         dAO.deleteRoboter(id);
     }
 
