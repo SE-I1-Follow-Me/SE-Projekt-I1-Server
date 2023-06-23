@@ -62,6 +62,15 @@ public class Controller {
     }
 
     /**
+     * DELETE Methode, um ein Roboter Objekt zu löschen
+     * @param id die ID des zu löschenden Roboters
+     */
+    @DeleteMapping("/roboter/delete/{id}")
+    public void deleteRoboter(@PathVariable Integer id) {
+        dAO.deleteRoboter(id);
+    }
+
+    /**
      * GET Methode fuer die Routen
      * @return Liste der aktuellen Routen
      */
