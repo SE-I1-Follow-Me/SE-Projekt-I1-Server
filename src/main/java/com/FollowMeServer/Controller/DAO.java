@@ -37,4 +37,8 @@ public class DAO {
         return optionalRoboter.orElse(null);
     }
 
+    public void deleteRoboter(Integer id) {
+    roboterRepository.deleteById(id);
+    }
+
 }
